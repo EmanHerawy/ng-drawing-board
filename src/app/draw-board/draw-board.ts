@@ -21,7 +21,7 @@ export class DrawBoardComponent implements AfterViewInit {
   @Input() public height = 400;
   font = [1, 2, 3, 4, 5, 8, 9, 10];
   imgageSrc;
-  colorCode = '#000'
+  colorCode = '#000';
 
   private cx: CanvasRenderingContext2D;
   color = [
@@ -198,7 +198,7 @@ export class DrawBoardComponent implements AfterViewInit {
       })
       .subscribe((res: [MouseEvent, MouseEvent]) => {
         const rect = canvasEl.getBoundingClientRect();
-        console.log(' res[0]', res[0]);
+        // console.log(' res[0]', res[0]);
 
         const prevPos = {
           x: res[0].clientX - rect.left,
@@ -228,7 +228,7 @@ export class DrawBoardComponent implements AfterViewInit {
   onDrawImage(event) {
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
     this.imgageSrc = canvasEl.toDataURL();
-    console.log('dataurl', this.imgageSrc);
+    // console.log('dataurl', this.imgageSrc);
   }
   onSelectFont(item) {
     this.cx.lineWidth = item;
